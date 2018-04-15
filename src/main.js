@@ -6,9 +6,16 @@ import App from './App'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-import He from './components/He'
+// import He from './components/He'
 
-Vue.component('he-comp1',He)
+// Vue.component('he-comp1',{
+// 	template: '<div>I am {{name}}</div>',
+// 	data(){
+// 		return{
+// 			name:'Jack'
+// 		}
+// 	}
+// })
 
 new Vue({
   el: '#app',
