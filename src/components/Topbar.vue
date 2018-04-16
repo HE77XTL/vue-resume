@@ -6,6 +6,9 @@
 		<div class="action">
 			<button>注册</button>
 			<button>登陆</button>
+			<el-button>默认按钮</el-button>
+			<el-button type="primary">主要按钮</el-button>
+			<el-button type="success">成功按钮</el-button>
 		</div>
 	</div>
 </template>
