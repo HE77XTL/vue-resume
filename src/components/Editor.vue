@@ -11,20 +11,45 @@
 			</ol>
 		</nav>
 		<ol class="content">
-			<li v-for="i in n" v-bind:class="{active: currentTab === i}">
-				Tab{{i+1}}
+			<li v-bind:class="{active: currentTab === 0}">
+				<Profile/>
+			</li>
+			<li v-bind:class="{active: currentTab === 1}">
+				<Education/>
+			</li>
+			<li v-bind:class="{active: currentTab === 2}">
+				<Awards/>
+			</li>
+			<li v-bind:class="{active: currentTab === 3}">
+				<Project/>
+			</li>
+			<li v-bind:class="{active: currentTab === 4}">
+				<Work/>
+			</li>
+			<li v-bind:class="{active: currentTab === 5}">
+				<Contact/>
 			</li>
 		</ol>
 	</div>
 </template>
 
 <script>
+	import Profile from './Profile'
+	import Education from './Education'
+	import Awards from './Awards'
+	import Project from './Project'
+	import Work from './Work'
+	import Contact from './Contact'
+
 	export default {
+		components: {
+			Profile,Education,Awards,Project,Work,Contact
+		},
 		data(){
 			return {
 				currentTab: 0,
 				n: [0,1,2,3,4,5],
-				icons: ['icon-icon','icon-credentials_icon','icon-qunfengxingquaihao','icon-book','icon-cc-phone-handset','icon-work0']
+				icons: ['icon-credentials_icon','icon-book','icon-icon','icon-qunfengxingquaihao','icon-work0','icon-cc-phone-handset']
 			}
 		}
 	}
