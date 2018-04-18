@@ -2,14 +2,19 @@
 	<div id="editor">
 		<nav>
 			<ol>
-				<li v-for="i in n" v-bind:class="{active: currentTab === i}" >
+				<li v-for="i in n" v-bind:class="{active: currentTab === i}" 
+					v-on:click="currentTab = i" >
 					<svg class="icon" >
 						<use v-bind:xlink:href="`#${icons[i]}`"></use>
 					</svg>
 				</li>
 			</ol>
 		</nav>
-		<ol class="content"></ol>
+		<ol class="content">
+			<li v-for="i in n" v-bind:class="{active: currentTab === i}">
+				Tab{{i+1}}
+			</li>
+		</ol>
 	</div>
 </template>
 
@@ -36,9 +41,9 @@
 		}
 		nav li.active {
 			background: #fff;
-		}
-		nav li.active .icon {
-			fill: #000;
+			.icon {
+				fill: #000;		
+			}
 		}
 	    .icon {
 	       width: 20px; 
@@ -52,6 +57,12 @@
 	    .content {
 			border: 1px solid red;
 			flex: 1;
+			li {
+				display: none;
+				&.active {
+					display:block;
+				}
+			}
 	    }
 	}
 </style>
