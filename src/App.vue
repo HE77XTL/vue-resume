@@ -33,15 +33,30 @@ export default {
   display: flex;
   flex-direction: column;
 }
+.topbar {
+  z-index: 1;
+  padding: 16px;
+  font-size: 20px;
+  box-shadow: 0 0 3px hsla(0,0,0,.5);
+}
 
 main {
   flex: 1;
   display: flex;
-  #editor {
-    width: 300px;
+  background: #ddd;
+
+  #editor{
+    width: 600px;
+    margin: 16px 8px 16px 16px;
+    background: #fff;
+    box-shadow: 0 0 3px hsla(0,0,0,.5)
+
   }
   #preview {
     flex: 1;
+    background: #fff;
+    box-shadow: 0 0 3px hsla(0,0,0,.5);
+    margin: 16px 16px 16px 8px;
   }
 }
 
