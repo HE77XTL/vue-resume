@@ -12,10 +12,10 @@
 		</nav>
 		<ol class="content">
 			<li v-bind:class="{active: currentTab === 0}">
-				<Profile/>
+				<Profile v-bind:profile="resume.profile" />
 			</li>
 			<li v-bind:class="{active: currentTab === 1}">
-				<Education/>
+				<Education v-bind:education="resume.education"/>
 			</li>
 			<li v-bind:class="{active: currentTab === 2}">
 				<Awards/>
@@ -42,6 +42,7 @@
 	import Contact from './Contact'
 
 	export default {
+		props: ['resume'],
 		components: {
 			Profile,Education,Awards,Project,Work,Contact
 		},

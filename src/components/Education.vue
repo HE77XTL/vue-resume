@@ -1,14 +1,11 @@
 <template>
-	<div id="profile">
-		<el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-		  <el-form-item label="名称">
-		    <el-input v-model="formLabelAlign.name"></el-input>
+	<div id="education">
+		<el-form label-width="80px" :model="education">
+		  <el-form-item label="学校">
+		    <el-input v-model="education.school"></el-input>
 		  </el-form-item>
-		  <el-form-item label="活动区域">
-		    <el-input v-model="formLabelAlign.region"></el-input>
-		  </el-form-item>
-		  <el-form-item label="活动形式">
-		    <el-input v-model="formLabelAlign.type"></el-input>
+		  <el-form-item label="学历">
+		    <el-input v-model="education.degree"></el-input>
 		  </el-form-item>
 		</el-form>
 	</div>
@@ -16,16 +13,7 @@
 
 <script>
   export default {
-    data() {
-      return {
-        labelPosition: 'right',
-        formLabelAlign: {
-          name: '',
-          region: '',
-          type: ''
-        }
-      };
-    }
+  	props: ['education']
   }
 </script>
 
