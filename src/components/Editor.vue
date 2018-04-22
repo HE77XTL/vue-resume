@@ -18,16 +18,13 @@
 				<Education v-bind:education="resume.education"/>
 			</li>
 			<li v-bind:class="{active: currentTab === 2}">
-				<Awards/>
+				<Work v-bind:workes="resume.workes"/>
 			</li>
 			<li v-bind:class="{active: currentTab === 3}">
-				<Project/>
+				<Awards v-bind:profile="resume.profile"/>
 			</li>
 			<li v-bind:class="{active: currentTab === 4}">
-				<Work/>
-			</li>
-			<li v-bind:class="{active: currentTab === 5}">
-				<Contact/>
+				<Contact v-bind:profile="resume.profile"/>
 			</li>
 		</ol>
 	</div>
@@ -37,20 +34,28 @@
 	import Profile from './Profile'
 	import Education from './Education'
 	import Awards from './Awards'
-	import Project from './Project'
 	import Work from './Work'
 	import Contact from './Contact'
 
 	export default {
 		props: ['resume'],
 		components: {
-			Profile,Education,Awards,Project,Work,Contact
+			Profile,Education,Awards,Work,Contact
 		},
 		data(){
 			return {
 				currentTab: 0,
-				n: [0,1,2,3,4,5],
-				icons: ['icon-credentials_icon','icon-book','icon-icon','icon-qunfengxingquaihao','icon-work0','icon-cc-phone-handset']
+				n: [0,1,2,3,4],
+				icons: ['icon-credentials_icon','icon-book','icon-work0','icon-icon','icon-cc-phone-handset']
+			}
+		},
+		methods: {
+			addWorks:function(){
+				this.resume.workes.push({
+					company: '',
+					content: '',
+					project: ['']
+				})
 			}
 		}
 	}

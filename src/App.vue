@@ -3,7 +3,7 @@
     <Topbar class="topbar"/>
     <main>
       <Editor v-bind:resume="resume" calss="editor" />
-      <Preview calss="preview"/>
+      <Preview v-bind:resume="resume" calss="preview"/>
     </main>
   </div>
 </template>
@@ -32,6 +32,13 @@ export default {
         education: {
           school: '',
           degree: ''
+        },
+        workes: {
+          experiences:[{
+            company:'',
+            content:'',
+            project:''
+          }]
         }
       }
     }

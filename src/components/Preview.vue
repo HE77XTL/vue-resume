@@ -1,8 +1,14 @@
 <template>
-	<div id="preview">This is preview</div>
+	<div id="preview">This is preview
+		{{resume.profile.name}}
+	</div>
 </template>
 
-<script></script>
+<script>
+	export default {
+		props: ['resume']
+	}
+</script>
 
 <style>
 	#preview{
