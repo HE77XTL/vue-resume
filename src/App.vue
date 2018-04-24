@@ -42,6 +42,18 @@ export default {
         }
       }
     }
+  },
+  created: function(){
+    console.log(this.resume.profile)
+    // onbeforeunload文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/onbeforeunload
+    window.onbeforeunload = ()=>{
+      let dataString = JSON.stringify(this.resume) // JSON 文档: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON
+      window.localStorage.setItem('myData', dataString) // 看文档https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage
+    }
+
+    let oldDataString = window.localStorage.getItem('myData')
+    let oldData = JSON.parse(oldDataString)
+    this.resume = oldData || []
   }
 }
 </script>
