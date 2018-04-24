@@ -21,9 +21,6 @@
 				<Work v-bind:workes="resume.workes"/>
 			</li>
 			<li v-bind:class="{active: currentTab === 3}">
-				<Awards v-bind:profile="resume.profile"/>
-			</li>
-			<li v-bind:class="{active: currentTab === 4}">
 				<Contact v-bind:profile="resume.profile"/>
 			</li>
 		</ol>
@@ -33,20 +30,19 @@
 <script>
 	import Profile from './Profile'
 	import Education from './Education'
-	import Awards from './Awards'
 	import Work from './Work'
 	import Contact from './Contact'
 
 	export default {
 		props: ['resume'],
 		components: {
-			Profile,Education,Awards,Work,Contact
+			Profile,Education,Work,Contact
 		},
 		data(){
 			return {
 				currentTab: 0,
-				n: [0,1,2,3,4],
-				icons: ['icon-credentials_icon','icon-book','icon-work0','icon-icon','icon-cc-phone-handset']
+				n: [0,1,2,3],
+				icons: ['icon-credentials_icon','icon-book','icon-work0','icon-cc-phone-handset']
 			}
 		},
 		methods: {
